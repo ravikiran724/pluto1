@@ -1,0 +1,37 @@
+.home-fluto {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  h1 {
+    // font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 40px;
+    line-height: 47px;
+    /* identical to box height */
+
+    text-align: center;
+    letter-spacing: 0.01em;
+
+    color: #016e9c;
+  }
+  img {
+    height: 69vh;
+  }
+}
+
+@media (max-width: 739px) {
+  /* mobile : width < 740px*/
+  .home-fluto {
+    height: 65vh;
+  }
+}
+/* ( min-width: 740px = 46.25em) and (max-width: 1023px = 63.9375em) */
+@media (min-width: 740px) and (max-width: 1023px) {
+  /* tablet : width >= 740px and : width < 1024px*/
+}
+/* ( min-width: 1024px = 64em) */
+@media (min-width: 1024px) {
+  /* PC : width >= 1024px*/
+}

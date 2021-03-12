@@ -1,0 +1,37 @@
+<form>
+	<div>
+		<h2 mat-dialog-title>Edit Object</h2>
+	</div>	
+	<div>
+		<mat-dialog-content>			
+			<h4>Relation</h4>
+			<div>
+				<mat-form-field class="full-wid">
+					<label>Relation Name</label>
+					<input matInput  formControlName="name" type="text">
+				</mat-form-field>
+				<mat-form-field class="full-wid">
+					<label>To Object</label>
+					<select matNativeControl formControlName="accountType">
+						<option value="Platinum">Platinum</option>
+						<option value="Gold">Gold</option>
+						<option value="Silver">Silver</option>
+					</select>	
+				</mat-form-field> 
+				<mat-form-field class="full-wid">
+					<label>Relation Type</label>
+					<select matNativeControl formControlName="accountType">
+						<option value="Platinum">Platinum</option>
+						<option value="Gold">Gold</option>
+						<option value="Silver">Silver</option>
+					</select>	
+				</mat-form-field> 
+			</div>
+		</mat-dialog-content>
+	</div>	
+	<div>
+		<mat-dialog-actions align="right">
+			<button mat-raised-button type="button" (click)="update()" color="primary" >UPDATE</button>
+		</mat-dialog-actions>
+	</div>	
+</form>

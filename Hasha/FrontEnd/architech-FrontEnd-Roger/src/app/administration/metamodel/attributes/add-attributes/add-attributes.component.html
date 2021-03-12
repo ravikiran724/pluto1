@@ -1,0 +1,75 @@
+<form class="form-add-attribute">
+  <div>
+    <h2 mat-dialog-title>Add Attribute</h2>
+  </div>
+  <div>
+    <mat-dialog-content>
+      <mat-form-field class="full-wid" [ngClass]="name ? 'sucess' : 'error'">
+        <mat-label>Name</mat-label>
+        <input matInput [(ngModel)]="name" name="name" type="text" />
+      </mat-form-field>
+    </mat-dialog-content>
+
+    <mat-dialog-content>
+      <mat-form-field class="full-wid" [ngClass]="format ? 'sucess' : 'error'">
+        <mat-label>Attribute Format</mat-label>
+        <mat-select matNativeControl [(ngModel)]="format" name="format">
+          <mat-option (click)="setValueCustom(0)" value="Integer"
+            >Integer</mat-option
+          >
+          <mat-option (click)="setValueCustom(0)" value="Decimal"
+            >Decimal</mat-option
+          >
+          <mat-option (click)="setValueCustom(0)" value="Text">Text</mat-option>
+          <mat-option (click)="setValueCustom(0)" value="Boolean"
+            >Boolean</mat-option
+          >
+          <mat-option (click)="setValueCustom(0)" value="Date">Date</mat-option>
+          <mat-option (click)="setValueCustom(0)" value="Currency"
+            >Currency</mat-option
+          >
+          <mat-option (click)="setValueCustom('Dropdown')" value="Dropdown"
+            >Dropdown
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </mat-dialog-content>
+
+    <mat-dialog-content *ngIf="valueCustom == 'Dropdown'">
+      <mat-form-field
+        class="full-wid"
+        [ngClass]="customVar ? 'sucess' : 'error'"
+      >
+        <mat-label>Option (Press enter to set option)</mat-label>
+        <input
+          matInput
+          type="text"
+          [(ngModel)]="customVar"
+          name="customVar"
+          (keydown.enter)="addToCustom()"
+        />
+      </mat-form-field>
+      <mat-form-field
+        *ngIf="customArr && customArr.length > 0"
+        class="full-wid"
+      >
+        <mat-chip-list #chipList>
+          <mat-chip
+            *ngFor="let i of customArr"
+            (removed)="remove(i)"
+            [removable]="true"
+          >
+            {{ i }}
+            <mat-icon matChipRemove *ngIf="true">cancel</mat-icon>
+          </mat-chip>
+        </mat-chip-list>
+      </mat-form-field>
+    </mat-dialog-content>
+  </div>
+  <div>
+    <mat-dialog-actions align="right">
+      <button mat-raised-button type="button" (click)="cancel()">Cancel</button>
+      <button mat-raised-button type="button" (click)="create()">Create</button>
+    </mat-dialog-actions>
+  </div>
+</form>

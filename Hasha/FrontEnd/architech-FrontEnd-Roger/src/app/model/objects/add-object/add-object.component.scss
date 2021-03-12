@@ -1,0 +1,71 @@
+.add-object-fluto {
+  position: relative;
+  form {
+    min-height: 270px;
+    flex-direction: column;
+    display: flex;
+    justify-content: space-between;
+    mat-dialog-content {
+      margin-top: 20px;
+      min-height: 120px;
+      height: fit-content;
+      &::-webkit-scrollbar {
+        width: 0;
+      }
+    }
+  }
+  mat-dialog-actions {
+    min-height: 0;
+    span {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+  }
+  h2 {
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 28px;
+    letter-spacing: 0.01em;
+
+    /* color icon */
+
+    color: #073143;
+  }
+
+  mat-dialog-actions {
+    button {
+      border-radius: 8px;
+      box-shadow: none;
+      // font-family: Roboto;
+      box-sizing: border-box;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 19px;
+      text-align: center;
+      letter-spacing: 0.01em;
+    }
+    button:nth-child(1) {
+      background: #fff;
+      border: 1px solid #016e9c;
+      color: #016e9c;
+      padding: 7px 16px;
+      &:hover {
+        background: #016e9c;
+        color: #ffffff;
+      }
+    }
+    button:nth-child(2) {
+      border: 1px solid #016e9c;
+
+      background: #016e9c;
+      color: #ffffff;
+      padding: 7px 16px;
+    }
+  }
+}

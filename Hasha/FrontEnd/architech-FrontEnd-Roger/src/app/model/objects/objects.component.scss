@@ -1,0 +1,199 @@
+.example-tree-invisible {
+  display: none;
+}
+
+.example-tree ul,
+.example-tree li {
+  cursor: pointer;
+  margin-top: 0;
+  margin-bottom: 0;
+  list-style-type: none;
+}
+svg {
+  cursor: pointer;
+}
+.action-edit {
+  display: flex;
+  align-items: center;
+  margin: auto;
+  i {
+    font-size: 24px;
+    color: #babfc1;
+    height: 20px;
+    cursor: pointer;
+  }
+}
+.object-fluto {
+  h1 {
+    // font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 32px;
+    line-height: 37px;
+    /* identical to box height */
+
+    letter-spacing: 0.01em;
+
+    /* color icon */
+
+    color: #073143;
+  }
+  button {
+    width: fit-content;
+    background: #016e9c;
+    box-shadow: 0px 2px 6px rgba(1, 110, 156, 0.24);
+    border-radius: 8px;
+    margin: 0 16px 0 0;
+    padding: 6px 10px;
+    span {
+      color: #fff;
+      margin-left: 30px;
+      margin-right: 5px;
+
+      // font-family: Roboto;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 19px;
+      text-align: center;
+      letter-spacing: 0.01em;
+    }
+  }
+  button:nth-child(3) {
+    background: #ff5353;
+  }
+}
+
+.gene-customizer2 {
+  width: fit-content;
+  transition: all 0.5s;
+
+  .settings-panel {
+    hr {
+      border: 1px solid #ececec;
+      width: 90%;
+    }
+    &::-webkit-scrollbar {
+      width: 0;
+    }
+    mat-toolbar {
+      span {
+        // font-family: Roboto;
+        font-style: normal;
+        font-weight: 900;
+        font-size: 24px;
+        line-height: 28px;
+        letter-spacing: 0.01em;
+
+        color: #073143;
+      }
+    }
+    mat-tree {
+      background: #f3f8fa;
+      border-radius: 8px;
+      // padding: 16px 0px;
+      button {
+        width: 100% !important;
+        padding: 0 16px;
+        border-radius: unset;
+        border-bottom: 0.5px solid #d2e0e5;
+        span.custom-icon-object {
+          width: 100%;
+          margin: auto;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          flex-direction: row-reverse;
+          // font-family: Roboto;
+          font-style: normal;
+          font-weight: normal;
+          font-size: 16px;
+          line-height: 19px;
+          /* identical to box height */
+
+          letter-spacing: 0.01em;
+
+          /* color icon */
+
+          color: #073143;
+        }
+      }
+    }
+    .custom-input-object {
+      mat-form-field {
+        input {
+          // font-family: Roboto;
+          font-style: normal;
+          font-weight: normal;
+          font-size: 16px;
+          line-height: 19px;
+          /* identical to box height */
+
+          letter-spacing: 0.01em;
+
+          /* color icon */
+
+          color: #073143;
+        }
+      }
+      h4 {
+        color: #073143;
+      }
+    }
+  }
+  .mat-dialog-actions {
+    .active-button {
+      background: #016e9c;
+      color: #ffffff;
+    }
+    button {
+      background: #ffffff;
+      border: 1px solid #016e9c;
+      box-sizing: border-box;
+      border-radius: 8px;
+      box-shadow: none;
+      // font-family: Roboto;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 19px;
+      text-align: center;
+      letter-spacing: 0.01em;
+
+      color: #016e9c;
+      padding: 7px 16px;
+      margin: 0 10px;
+      &:hover {
+        background: #016e9c;
+        color: #ffffff;
+      }
+    }
+    button:nth-child(1) {
+    }
+    button:nth-child(2) {
+    }
+    button:nth-child(3) {
+    }
+  }
+  @media (max-width: 739px) {
+    .settings-panel {
+      mat-tree {
+        width: 85vw;
+        overflow-x: scroll;
+      }
+    }
+    .mat-dialog-actions {
+      button {
+        margin: 0 7px;
+      }
+    }
+  }
+  /* ( min-width: 740px = 46.25em) and (max-width: 1023px = 63.9375em) */
+  @media (min-width: 740px) and (max-width: 1023px) {
+    /* tablet : width >= 740px and : width < 1024px*/
+  }
+  /* ( min-width: 1024px = 64em) */
+  @media (min-width: 1024px) {
+    /* PC : width >= 1024px*/
+  }
+}

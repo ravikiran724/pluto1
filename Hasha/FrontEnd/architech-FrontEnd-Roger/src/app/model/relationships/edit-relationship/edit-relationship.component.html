@@ -1,0 +1,76 @@
+<form class="form-edit-relationship">
+  <div>
+    <h2 mat-dialog-title>Edit Relationship</h2>
+  </div>
+  <div>
+    <mat-form-field
+      class="full-wid"
+      [ngClass]="RelationshipType == null ? 'error' : 'sucess'"
+    >
+      <mat-label>Relationship Type</mat-label>
+      <mat-select
+        matNativeControl
+        [(ngModel)]="RelationshipType"
+        name="RelationshipType"
+        (selectionChange)="changeRelaType($event.value)"
+      >
+        <mat-option
+          *ngFor="let item of realtionshipTypeList"
+          [value]="item.id"
+          >{{ item.name }}</mat-option
+        >
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field
+      class="full-wid"
+      [ngClass]="
+        toObjectList == null || toObjectList.length == 0 ? 'error' : 'sucess'
+      "
+    >
+      <mat-label>From Object</mat-label>
+      <mat-select
+        matNativeControl
+        [(ngModel)]="FromObject"
+        name="FromObject"
+        (selectionChange)="changeFromObj($event.value)"
+      >
+        <mat-option *ngFor="let item of fromObjectList" [value]="item.id">{{
+          item.name
+        }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field
+      class="full-wid"
+      [ngClass]="
+        toObjectList == null || toObjectList.length == 0 ? 'error' : 'sucess'
+      "
+    >
+      <mat-label>To Object</mat-label>
+      <mat-select matNativeControl [(ngModel)]="ToObject" name="ToObject">
+        <mat-option *ngFor="let item of toObjectList" [value]="item.id">{{
+          item.name
+        }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div>
+    <mat-dialog-actions align="right">
+      <button mat-raised-button type="button" (click)="cancel()" color="accent">
+        Cancel
+      </button>
+      <!-- <button mat-raised-button type="button" (click)="delete()" color="warn">
+        Delete
+      </button> -->
+      <button
+        mat-raised-button
+        type="button"
+        (click)="update()"
+        color="primary"
+      >
+        Update
+      </button>
+    </mat-dialog-actions>
+  </div>
+</form>

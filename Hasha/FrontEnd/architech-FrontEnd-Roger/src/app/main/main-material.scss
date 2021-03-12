@@ -1,0 +1,333 @@
+.example-sidenav-content {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+.cart-item {
+  .content-wrap {
+    font-size: 0.85rem;
+  }
+}
+.gene-ham-icon {
+  button {
+    border: 0;
+    background: transparent;
+    color: #073143;
+    cursor: pointer;
+    display: flex;
+  }
+}
+.search-bar {
+  .search-form {
+    mat-form-field {
+      width: 512px;
+      padding-top: 0.5em;
+      .icon-search-fluto {
+        position: absolute;
+        padding: 13px 18px;
+      }
+      input {
+        background: #eaeef0;
+        height: 44px;
+        border-radius: 7px !important;
+        padding: 7px 16px 0px 48px;
+      }
+      .mat-form-field-label-wrapper {
+        // top: 5px;
+        margin-top: 13px;
+        left: 50px;
+        span {
+          font-size: 15px;
+          line-height: 19px;
+          letter-spacing: 0.01em;
+          color: #babfc1;
+        }
+      }
+      .mat-form-field-underline {
+        height: 0;
+      }
+    }
+  }
+}
+.mat-button-wrapper {
+  img {
+    border-radius: 50%;
+  }
+}
+.user-menu {
+  margin-top: 14px;
+  margin-right: 22px;
+  width: 222px;
+  padding: 10px 20px;
+  button {
+    display: flex;
+    align-items: center;
+    padding: 0;
+    margin-top: 5px;
+    i.fa {
+      width: 30px;
+      display: inline-block;
+      font-size: 20px;
+      text-align: center;
+      color: #babfc1;
+    }
+    span {
+      // font-family: Roboto;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 16px;
+      // line-height: 19px;
+      display: flex;
+      align-items: center;
+      letter-spacing: 0.01em;
+
+      /* color icon */
+
+      color: #073143;
+    }
+    &:hover {
+      background: #bbd7e2 !important;
+      border-radius: 8px;
+    }
+  }
+}
+.user-button {
+  mat-icon {
+    font-size: 30px;
+    width: 30px;
+    height: 30px;
+    color: #073143;
+  }
+}
+.chat-panel {
+  .scroll {
+    mat-toolbar {
+      background: #fff;
+      height: 70px;
+      h3 {
+        margin: 0 10px;
+        // font-family: Roboto;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 24px;
+        line-height: 28px;
+        display: flex;
+        align-items: center;
+        letter-spacing: 0.01em;
+
+        /* color icon */
+
+        color: #073143;
+      }
+    }
+    mat-nav-list {
+      height: fit-content;
+      mat-list-item {
+        width: 97%;
+        height: 0 !important;
+        margin: 0 0 10px 10px;
+        padding: 30px 0;
+        border-radius: 7px 0 0 7px;
+
+        .mat-list-item-content {
+          flex-direction: row-reverse;
+          h4 {
+            // font-family: Roboto;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 16px;
+            line-height: 19px;
+            display: flex;
+            align-items: center;
+            letter-spacing: 0.01em;
+
+            color: #073143;
+          }
+          p {
+            // font-family: Roboto;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 16px;
+            line-height: 19px;
+            display: flex;
+            align-items: center;
+            letter-spacing: 0.01em;
+
+            color: #6a7377;
+          }
+        }
+        svg {
+          margin-right: 16px;
+        }
+        &:hover {
+          background: #bbd7e2;
+        }
+      }
+    }
+  }
+}
+.settings-panel {
+  hr {
+    border: 1px solid #ececec;
+    width: 90%;
+  }
+  mat-toolbar {
+    // background: #073143;
+    height: 70px;
+    span {
+      margin: 0 10px;
+      font-style: normal;
+      font-weight: 900;
+      font-size: 24px;
+      line-height: 28px;
+      display: flex;
+      align-items: center;
+      letter-spacing: 0.01em;
+      color: #073143;
+    }
+  }
+  .theme-options {
+    padding: 0;
+    h3 {
+      padding: 14px 0 0 0;
+      // font-family: Roboto;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 18px;
+      line-height: 21px;
+      display: flex;
+      align-items: center;
+      letter-spacing: 0.01em;
+
+      /* color icon */
+
+      color: #073143;
+    }
+    .option-layout {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      .mat-checkbox {
+        width: 77%;
+        span {
+          // font-family: Roboto;
+          font-style: normal;
+          font-weight: normal;
+          font-size: 16px;
+          line-height: 19px;
+          display: flex;
+          align-items: center;
+          letter-spacing: 0.01em;
+
+          color: #073143;
+        }
+      }
+    }
+  }
+  .theme-color {
+    h4 {
+      // font-family: Roboto;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 17px;
+      line-height: 21px;
+
+      letter-spacing: 0.01em;
+
+      /* color icon */
+
+      color: #073143;
+    }
+  }
+}
+.chat-window {
+  .chat-header {
+    background: #eaeef0;
+  }
+  .gene-card-footer {
+    padding: 0;
+    .mat-form-field-flex {
+      align-items: flex-end;
+      background: #eaeef0;
+      border-radius: 8px;
+      padding: 0px 9px 6px 9px;
+    }
+  }
+}
+.gene-chat-wrap {
+  // overflow: auto;
+  .people-list {
+    // overflow: auto;
+    .mat-tab-body-content {
+      height: 94%;
+      overflow: auto;
+      &::-webkit-scrollbar {
+        width: 0;
+      }
+    }
+  }
+
+  .mat-tab-label-content {
+    // font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 28px;
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.01em;
+
+    /* color icon */
+
+    color: #073143;
+  }
+
+  .gene-card-content {
+    h3 {
+      // font-family: Roboto;
+      font-style: normal;
+      // font-weight: bold;
+      font-size: 16px;
+      font-weight: bold;
+      line-height: 21px;
+      display: flex;
+      align-items: center;
+      letter-spacing: 0.01em;
+
+      /* color icon */
+
+      color: #073143;
+    }
+  }
+  h4 {
+    // font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.01em;
+
+    color: #073143;
+    span {
+      margin: 0 10px;
+    }
+  }
+}
+.gene-list {
+  flex-wrap: wrap;
+  justify-content: flex-start !important;
+  .ng-star-inserted {
+    width: 65px;
+    a.gene-list-link {
+      width: 100% !important;
+      height: 100% !important;
+      span {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+}

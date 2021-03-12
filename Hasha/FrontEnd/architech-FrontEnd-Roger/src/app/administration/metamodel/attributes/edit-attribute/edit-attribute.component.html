@@ -1,0 +1,49 @@
+<form class="form-edit-attribute">
+  <div>
+    <h2 mat-dialog-title>Edit Attribute</h2>
+  </div>
+  <div>
+    <mat-dialog-content>
+      <mat-form-field class="full-wid" [ngClass]="name ? 'sucess' : 'error'">
+        <mat-label>Name</mat-label>
+        <input matInput [(ngModel)]="name" name="name" type="text" />
+      </mat-form-field>
+    </mat-dialog-content>
+
+    <mat-dialog-content>
+      <mat-form-field class="full-wid" [ngClass]="format ? 'sucess' : 'error'">
+        <mat-label>Attribute Format</mat-label>
+        <input matInput [value]="format" type="text" readonly />
+      </mat-form-field>
+    </mat-dialog-content>
+
+    <mat-dialog-content>
+      <mat-form-field class="full-wid" *ngIf="format == 'Dropdown'">
+        <mat-label>Option</mat-label>
+        <mat-chip-list #chipList>
+          <mat-chip *ngFor="let i of option">
+            {{ i.value }}
+          </mat-chip>
+        </mat-chip-list>
+      </mat-form-field>
+    </mat-dialog-content>
+  </div>
+  <div>
+    <mat-dialog-actions align="right">
+      <button mat-raised-button type="button" (click)="cancel()" color="accent">
+        Cancel
+      </button>
+      <!-- <button mat-raised-button type="button" (click)="delete()" color="warn">
+        Delete
+      </button> -->
+      <button
+        mat-raised-button
+        type="button"
+        (click)="update()"
+        color="primary"
+      >
+        Update
+      </button>
+    </mat-dialog-actions>
+  </div>
+</form>

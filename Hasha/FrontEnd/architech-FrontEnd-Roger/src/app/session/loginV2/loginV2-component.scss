@@ -1,0 +1,299 @@
+.gene-login {
+  display: flex;
+  .background-login-fluto {
+    height: 100vh;
+    flex: 1.5;
+    background-image: url(../../../assets/img/background-login.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .form-login-fluto {
+    flex: 1;
+    .media-form-login {
+      width: 70%;
+      p {
+        // font-family: Roboto;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 19px;
+        line-height: 23px;
+        letter-spacing: 0.01em;
+
+        color: #babfc1;
+      }
+    }
+    .login-logo {
+      text-align: center;
+      p {
+        font-family: sans-serif;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 20px;
+        line-height: 23px;
+        text-align: center;
+        letter-spacing: 0.01em;
+
+        /* color icon */
+
+        color: #073143;
+      }
+      .fluto-signin {
+        // margin-top: -42px;
+        h1 {
+          font-family: sans-serif;
+          font-style: normal;
+          font-weight: bold;
+          font-size: 48px;
+          line-height: 56px;
+          text-align: center;
+          letter-spacing: 0.01em;
+          color: #016e9c;
+          margin-bottom: 20px;
+        }
+        h5 {
+          font-family: sans-serif;
+          font-style: normal;
+          font-weight: normal;
+          font-size: 20px;
+          line-height: 23px;
+          text-align: center;
+          letter-spacing: 0.01em;
+
+          /* color icon */
+
+          color: #073143;
+          margin-bottom: 20px;
+        }
+      }
+      .social-list {
+        justify-content: space-around !important;
+        margin: auto;
+        width: 69%;
+        .button-login {
+          background: #f3f8fa !important;
+          width: 120px;
+          border-radius: 8px;
+        }
+      }
+
+      .mat-fab .mat-button-wrapper {
+        padding: 0;
+      }
+      .background-login-top-fluto {
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        .background-login-top {
+          width: 20vw;
+          height: 23vh;
+          background-image: url(../../../assets/img/background-login-top.svg);
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
+      }
+    }
+
+    .mat-form-field-flex {
+      background: #f3f8fa;
+      padding: 0px 0px 0px 16px;
+      border-radius: 8px;
+      height: 50px;
+    }
+    .mat-form-field-infix {
+      display: flex;
+      .icon-input {
+        height: 20px;
+        position: relative;
+        top: -3px;
+        margin-right: 7px;
+      }
+      input {
+        font-size: 18px;
+        padding-right: 16px;
+      }
+
+      .mat-form-field-label-wrapper {
+        left: 30px;
+        // top: -12px;
+        label {
+          span {
+            font-size: 16px;
+            line-height: 23px;
+            letter-spacing: 0.01em;
+            color: #babfc1;
+          }
+        }
+      }
+    }
+    .icon-eyes-hiden-password {
+      font-size: 20px;
+      color: #8eaebc;
+      background: #f3f8fa;
+      position: relative;
+      top: -7px;
+      right: 7px;
+      cursor: pointer;
+    }
+    .forgot-password {
+      margin-top: 16px;
+      text-align: end;
+      color: #016e9c;
+      a {
+        // font-family: Roboto;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 19px;
+        /* identical to box height */
+
+        letter-spacing: 0.01em;
+      }
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+    .button-login {
+      width: 100%;
+      height: 50px;
+      background: #016e9c;
+      box-shadow: 0px 4px 8px rgba(163, 163, 163, 0.25);
+      border-radius: 8px;
+      color: #fff;
+      // font-family: Roboto;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 20px;
+      line-height: 23px;
+      text-align: center;
+      letter-spacing: 0.01em;
+    }
+    .button-signup {
+      // font-family: Roboto;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 19px;
+      line-height: 23px;
+      text-align: center;
+      letter-spacing: 0.01em;
+
+      /* color icon */
+
+      color: #073143;
+      &:hover {
+        cursor: pointer;
+        text-decoration: underline;
+      }
+      span {
+        font-weight: bold;
+        color: #016e9c;
+      }
+    }
+  }
+}
+@media (max-width: 739px) {
+  .background-login-fluto {
+    display: none;
+  }
+  .form-login-fluto {
+    //  padding: 0 20px;
+    .media-form-login {
+      width: 80%;
+      span {
+        // font-family: Roboto;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 20px;
+        line-height: 23px;
+        letter-spacing: 0.01em;
+
+        color: #babfc1;
+      }
+    }
+    .login-logo {
+      .background-login-top-fluto {
+        .background-login-top {
+          width: 66vw !important;
+        }
+      }
+    }
+    .mat-form-field-label-wrapper {
+      margin-top: -5px;
+    }
+  }
+}
+
+@media (min-width: 740px) and (max-width: 1023px) {
+  .background-login-fluto {
+    flex: 0.2 !important;
+  }
+  .form-login-fluto {
+    //  padding: 0 20px;
+    .media-form-login {
+    }
+    .login-logo {
+      .background-login-top-fluto {
+        .background-login-top {
+          width: 55vw !important;
+        }
+      }
+    }
+  }
+}
+
+@media (width: 1024px) {
+  .background-login-fluto {
+    flex: 0.2 !important;
+  }
+  .form-login-fluto {
+    //  padding: 0 20px;
+    .media-form-login {
+    }
+    .login-logo {
+      .background-login-top-fluto {
+        .background-login-top {
+          width: 39vw !important;
+          height: 16vh !important;
+        }
+      }
+    }
+  }
+}
+.sucesss {
+  border: 1px solid #72e97e;
+  border-radius: 8px;
+  height: 53px;
+  &::before {
+    content: "";
+    background-image: url(../../../assets/img/sucess.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    top: 1px;
+    bottom: 0;
+    right: 12px;
+    width: 20px;
+    height: 20px;
+    margin: auto;
+    z-index: 99;
+  }
+}
+.errors {
+  border: 1px solid #ff5353;
+  border-radius: 8px;
+  height: 53px;
+  &::before {
+    content: "";
+    background-image: url(../../../assets/img/error.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    top: 1px;
+    bottom: 0;
+    right: 12px;
+    width: 20px;
+    height: 20px;
+    margin: auto;
+    z-index: 99;
+  }
+}

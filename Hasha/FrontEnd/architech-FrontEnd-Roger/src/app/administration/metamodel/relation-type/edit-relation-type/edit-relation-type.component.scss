@@ -1,0 +1,82 @@
+.form-edit-relation-type {
+  h2 {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 28px;
+    letter-spacing: 0.01em;
+
+    /* color icon */
+
+    color: #073143;
+  }
+
+  mat-dialog-actions {
+    button {
+      border-radius: 8px;
+      box-shadow: none;
+      // font-family: Roboto;
+      box-sizing: border-box;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 19px;
+      text-align: center;
+      letter-spacing: 0.01em;
+    }
+    button:nth-child(1) {
+      background: #fff;
+      border: 1px solid #016e9c;
+      color: #016e9c;
+      padding: 7px 16px;
+      &:hover {
+        background: #016e9c;
+        color: #ffffff;
+      }
+    }
+    // button:nth-child(2) {
+    //   background: #fff;
+    //   border: 1px solid #016e9c;
+    //   color: #016e9c;
+    //   padding: 7px 16px;
+    //   &:hover {
+    //     background: #016e9c;
+    //     color: #ffffff;
+    //   }
+    // }
+    button:nth-child(2) {
+      border: 1px solid #016e9c;
+
+      background: #016e9c;
+      color: #ffffff;
+      padding: 7px 16px;
+    }
+  }
+  .__custom-edit-relation-type {
+    width: 85%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .cus-default-button {
+      cursor: pointer;
+    }
+  }
+  @media (max-width: 739px) {
+    /* mobile : width < 740px*/
+    mat-dialog-actions {
+      display: flex;
+      justify-content: flex-end;
+      button {
+        margin: 5px 2px;
+      }
+    }
+  }
+  /* ( min-width: 740px = 46.25em) and (max-width: 1023px = 63.9375em) */
+  @media (min-width: 740px) and (max-width: 1023px) {
+    /* tablet : width >= 740px and : width < 1024px*/
+  }
+  /* ( min-width: 1024px = 64em) */
+  @media (min-width: 1024px) {
+    /* PC : width >= 1024px*/
+  }
+}

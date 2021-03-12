@@ -1,0 +1,149 @@
+<div class="add-object-fluto">
+  <mat-dialog-actions>
+    <span (click)="cancel()"
+      ><svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M13.5909 12L18.0441 7.54687C18.2554 7.3359 18.3743 7.04962 18.3745 6.75099C18.3748 6.45237 18.2564 6.16587 18.0455 5.95453C17.8345 5.74319 17.5482 5.62431 17.2496 5.62404C16.951 5.62378 16.6645 5.74215 16.4531 5.95312L12 10.4062L7.54687 5.95312C7.33553 5.74178 7.04888 5.62305 6.75 5.62305C6.45111 5.62305 6.16447 5.74178 5.95312 5.95312C5.74178 6.16447 5.62305 6.45111 5.62305 6.75C5.62305 7.04888 5.74178 7.33553 5.95312 7.54687L10.4062 12L5.95312 16.4531C5.74178 16.6645 5.62305 16.9511 5.62305 17.25C5.62305 17.5489 5.74178 17.8355 5.95312 18.0469C6.16447 18.2582 6.45111 18.377 6.75 18.377C7.04888 18.377 7.33553 18.2582 7.54687 18.0469L12 13.5937L16.4531 18.0469C16.6645 18.2582 16.9511 18.377 17.25 18.377C17.5489 18.377 17.8355 18.2582 18.0469 18.0469C18.2582 17.8355 18.3769 17.5489 18.3769 17.25C18.3769 16.9511 18.2582 16.6645 18.0469 16.4531L13.5909 12Z"
+          fill="#BABFC1"
+        />
+      </svg>
+    </span>
+  </mat-dialog-actions>
+  <form>
+    <div>
+      <h2 mat-dialog-title>Add New Object</h2>
+    </div>
+    <div>
+      <mat-dialog-content>
+        <mat-form-field
+          class="full-wid"
+          [ngClass]="ObjectTypeId == null ? 'error' : 'sucess'"
+        >
+          <mat-label>Object Type</mat-label>
+          <mat-select
+            matNativeControl
+            [(ngModel)]="ObjectTypeId"
+            name="ObjectTypeId"
+            (selectionChange)="changeObjectType($event.value)"
+          >
+            <mat-option *ngFor="let item of typeObjectList" [value]="item.id">{{
+              item.name
+            }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field
+          class="full-wid"
+          [ngClass]="Name == null ? 'error' : 'sucess'"
+        >
+          <mat-label>Name</mat-label>
+          <input matInput [(ngModel)]="Name" name="Name" type="text" />
+        </mat-form-field>
+
+        <h4 *ngIf="hasAttribute">Attributes</h4>
+        <div *ngFor="let item of attributeValue; let i = index">
+          <mat-form-field
+            class="full-wid"
+            *ngIf="item.format === 'Text'"
+            [ngClass]="attributeValue[i].value.length == 0 ? 'error' : 'sucess'"
+          >
+            <mat-label>{{ item.name }}</mat-label>
+            <input
+              matInput
+              (keyup)="changeValue(i, $event.target.value)"
+              type="text"
+              style="display: inline-block"
+            />
+          </mat-form-field>
+
+          <mat-form-field class="full-wid" *ngIf="item.format === 'Integer'">
+            <mat-label>{{ item.name }}</mat-label>
+            <input
+              matInput
+              (change)="changeValue(i, $event.target.value)"
+              type="number"
+              style="display: inline-block"
+            />
+          </mat-form-field>
+
+          <mat-form-field class="full-wid" *ngIf="item.format === 'Decimal'">
+            <mat-label>{{ item.name }}</mat-label>
+            <input
+              matInput
+              (change)="changeValue(i, $event.target.value)"
+              type="number"
+              style="display: inline-block"
+              step="0.01"
+            />
+          </mat-form-field>
+
+          <mat-form-field class="full-wid" *ngIf="item.format === 'Currency'">
+            <mat-label>{{ item.name }}</mat-label>
+            <input
+              matInput
+              (blur)="transformAmount(i, $event)"
+              (change)="changeValue(i, $event.target.value)"
+              type="text"
+              style="display: inline-block"
+            />
+          </mat-form-field>
+
+          <div>
+            <mat-checkbox
+              (change)="changeValue(i, $event.checked)"
+              *ngIf="item.format === 'Boolean'"
+              style="padding-bottom: 23px"
+              >{{ item.name }}</mat-checkbox
+            >
+          </div>
+
+          <mat-form-field
+            class="full-wid"
+            *ngIf="item.format === 'Date'"
+            [ngClass]="attributeValue[i].Value.length == 0 ? 'error' : 'sucess'"
+          >
+            <input
+              matInput
+              [matDatepicker]="myDatepicker"
+              (dateChange)="changeValue(i, $event.value)"
+              placeholder="Choose a date"
+            />
+            <mat-datepicker-toggle
+              matSuffix
+              [for]="myDatepicker"
+            ></mat-datepicker-toggle>
+            <mat-datepicker #myDatepicker></mat-datepicker>
+          </mat-form-field>
+
+          <mat-form-field class="full-wid" *ngIf="item.format === 'Dropdown'">
+            <mat-label>{{ item.name }}</mat-label>
+            <mat-select
+              matNativeControl
+              (selectionChange)="changeValue(i, $event.value)"
+            >
+              <mat-option *ngFor="let i of item.option" [value]="i.value">{{
+                i.value
+              }}</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </mat-dialog-content>
+    </div>
+    <div>
+      <mat-dialog-actions align="right">
+        <button mat-raised-button type="button" (click)="cancel()">
+          Cancel
+        </button>
+        <button mat-raised-button type="button" (click)="create()">
+          Create
+        </button>
+      </mat-dialog-actions>
+    </div>
+  </form>
+</div>

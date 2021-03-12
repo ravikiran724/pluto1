@@ -1,0 +1,46 @@
+<form class="form-add-object-type">
+  <div>
+    <h2 mat-dialog-title>Add Object Type</h2>
+  </div>
+  <div>
+    <mat-dialog-content>
+      <mat-form-field class="full-wid" [ngClass]="name ? 'sucess' : 'error'">
+        <mat-label>Name</mat-label>
+        <input matInput [(ngModel)]="name" name="name" type="text" />
+      </mat-form-field>
+
+      <h4>Attribute (Optional)</h4>
+
+      <mat-form-field
+        class="full-wid"
+        [ngClass]="attributesSelected.length != 0 ? 'sucess' : 'error'"
+      >
+        <mat-select
+          [(ngModel)]="attributesSelected"
+          name="attributesSelected"
+          placeholder="Select Attribute"
+          multiple
+        >
+          <mat-option *ngFor="let item of attributesList" [value]="item.id"
+            >{{ item.name }} ({{ item.format }})</mat-option
+          >
+        </mat-select>
+      </mat-form-field>
+    </mat-dialog-content>
+  </div>
+  <div>
+    <mat-dialog-actions align="right">
+      <button mat-raised-button type="button" (click)="cancel()" color="accent">
+        Cancel
+      </button>
+      <button
+        mat-raised-button
+        type="button"
+        (click)="create()"
+        color="primary"
+      >
+        Create
+      </button>
+    </mat-dialog-actions>
+  </div>
+</form>
